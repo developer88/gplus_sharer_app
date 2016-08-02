@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'share_to_gplus'
+ShareToGplus::Executable.invoke(ARGV)

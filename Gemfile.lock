@@ -1,3 +1,11 @@
+PATH
+  remote: vendor/gems/share_to_gplus-0.1.1
+  specs:
+    share_to_gplus (0.1.1)
+      capybara (>= 2)
+      poltergeist
+      selenium-webdriver
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -35,10 +43,6 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
-    share_to_gplus (0.1.1)
-      capybara (>= 2)
-      poltergeist
-      selenium-webdriver
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -57,7 +61,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   poltergeist
-  share_to_gplus
+  share_to_gplus!
   sinatra
 
 BUNDLED WITH
