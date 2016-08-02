@@ -18,7 +18,7 @@ end
 #   category to pick
 #   community url
 def post_to_gplus
-  return false if ENV['SECRET_CODE'].empty? || ENV['SECRET_CODE'] !== params['secret']
+  return false if ENV['SECRET_CODE'].empty? || ENV['SECRET_CODE'] != params['secret']
   share_this = ShareToGplus::It.new do |config|
     config.login = ENV['GPLUS_LOGIN']
     config.password = ENV['GPLUS_PASSWORD']
