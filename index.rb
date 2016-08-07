@@ -27,4 +27,5 @@ def post_to_gplus
     config.category = params['category']
     config.link = params['link']
   end
+  share_this.execute
 end
