@@ -40,7 +40,7 @@ config.javascript_driver = :poltergeist
 
 ## Usage
 
-POST <url of your website> with payload:
+POST < url of your website > with payload:
 
 ```
 secret - secret key (see SECRET_CODE env variable)
