@@ -6,11 +6,6 @@ post '/' do
   status 403 unless post_to_gplus
 end
 
-# debugging
-get '/' do
-  status 403 unless post_to_gplus
-end
-
 # params
 #   secret
 #   link to share
