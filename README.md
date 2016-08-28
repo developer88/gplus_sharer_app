@@ -50,6 +50,10 @@ category - category of the post to be published
 link - url for the post to be published
 ```
 
+## Changes
+
+See [CHANGELOG](CHANGELOG.md) for changes information.
+
 ## License
 
 Please read [LICENsE](LICENSE) file
