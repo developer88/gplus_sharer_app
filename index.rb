@@ -26,6 +26,7 @@ def post_to_gplus
     config.url =  params['community']
     config.category = params['category']
     config.link = params['link']
+    config.javascript_driver = :poltergeist
   end
   share_this.execute
 end
