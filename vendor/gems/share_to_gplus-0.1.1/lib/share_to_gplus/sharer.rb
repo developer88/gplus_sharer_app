@@ -43,6 +43,7 @@ module ShareToGplus
     end
 
     def open_share_dialog
+      puts current_url.inspect
       find("div.jXDCJf.Tek5Ce.BDrJf").click if @google_plus_version == "new"
       find("div.kqa.es").click if @google_plus_version == "old"
     end
