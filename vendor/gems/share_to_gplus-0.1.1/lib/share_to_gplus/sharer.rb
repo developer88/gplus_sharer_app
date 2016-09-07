@@ -1,6 +1,7 @@
 module ShareToGplus
   require 'capybara/dsl'
   require 'capybara/poltergeist'
+  require 'capybara-screenshot'
 
   class Sharer
 
