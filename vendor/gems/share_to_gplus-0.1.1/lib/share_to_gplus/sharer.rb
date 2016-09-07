@@ -22,6 +22,7 @@ module ShareToGplus
         'Upgrade-Insecure-Requests' => 1,
         'User-Agent' =>  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.89 Safari/537.36'
       }
+      Capybara::Screenshot.autosave_on_failure = false
     end
 
     def visit_community
@@ -67,6 +68,7 @@ module ShareToGplus
       puts "Gplus version is #{@google_plus_version.inspect}"
       puts "Current url is #{current_url}"
       puts "Old link button exist #{page.has_selector?('span.d-s.ph.pZ').inspect}"
+      Capybara::Screenshot.screenshot_and_open_image
       if @google_plus_version == "new"
         find(:xpath, '//div[@aria-label="Add link"]').click
         dialog = find(:xpath, '//div[@role="dialog"]')
