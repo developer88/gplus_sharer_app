@@ -22,6 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'capybara', '>=2'
   gem.add_runtime_dependency 'selenium-webdriver'
   gem.add_runtime_dependency 'poltergeist'
+  gem.add_runtime_dependency 'capybara-screenshot'
 
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'guard'
