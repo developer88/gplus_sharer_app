@@ -66,9 +66,7 @@ module ShareToGplus
     end
 
     def fill_link(link:)
-
-      #Capybara::Screenshot.screenshot_and_open_image
-      puts  "Gplus version is #{@google_plus_version.inspect}" + " Current url is #{current_url}" + " Old link button exist #{page.has_selector?('span.d-s.ph.pZ').inspect}"
+      raise  "Gplus version is #{@google_plus_version.inspect}" + " Current url is #{current_url}" + " Old link button exist #{page.has_selector?('span.d-s.ph.pZ').inspect} #{Capybara::Screenshot.screenshot_and_save_page.inspect}"
       if @google_plus_version == "new"
         find(:xpath, '//div[@aria-label="Add link"]').click
         dialog = find(:xpath, '//div[@role="dialog"]')
