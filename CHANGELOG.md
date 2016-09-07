@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.x.x] - 2016-09-xx
 ### Added
 
+* Logs
 
-### Removed
+### Updated
 
+* Update share_to_gplus gem
 
 
 ## [0.1.0] - 2016-08-28
