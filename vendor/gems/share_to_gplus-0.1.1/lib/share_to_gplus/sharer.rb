@@ -16,6 +16,12 @@ module ShareToGplus
         capybara_config.raise_server_errors = false
       end
       @google_plus_version = "old" # by default
+
+      # Set headers to pass Google authorization
+      Capybara.current_session.driver.headers = {
+        'Upgrade-Insecure-Requests' => 1,
+        'User-Agent' =>  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.89 Safari/537.36'
+      }
     end
 
     def visit_community
@@ -43,7 +49,7 @@ module ShareToGplus
     end
 
     def open_share_dialog
-      raise current_url.inspect
+      puts "Current url is #{current_url}"
       find("div.jXDCJf.Tek5Ce.BDrJf").click if @google_plus_version == "new"
       find("div.kqa.es").click if @google_plus_version == "old"
     end
