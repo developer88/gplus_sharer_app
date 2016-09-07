@@ -64,6 +64,9 @@ module ShareToGplus
     end
 
     def fill_link(link:)
+      puts "Gplus version is #{@google_plus_version.inspect}"
+      puts "Current url is #{current_url}"
+      puts "Old link button exist #{page.has_selector?('span.d-s.ph.pZ').inspect}"
       if @google_plus_version == "new"
         find(:xpath, '//div[@aria-label="Add link"]').click
         dialog = find(:xpath, '//div[@role="dialog"]')
