@@ -8,7 +8,7 @@ end
 
 get '/debug/screenshot' do
   list = Dir.glob("./*.*").map{|f| f.split('/').last}
-  puts list.inspect
+  raise list.inspect
 end
 
 # params
