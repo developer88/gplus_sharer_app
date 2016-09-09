@@ -10,7 +10,9 @@ get '/debug/screenshot' do
   list = Dir.glob("./*.*").map{|f| f.split('/').last}
   list2 = Dir.glob("../*.*").map{|f| f.split('/').last}
   list3 = Dir.glob("/app/./*.*").map{|f| f.split('/').last}
-  raise list.inspect + list2.inspect + list3.inspect
+  #raise list.inspect + list2.inspect + list3.inspect
+  file = Dir.glob("/app/./*.*").map{|f| f.split('/').last}.select{|filename| filename.include?('png') }.last
+  send_file "/app/./#{file}", :filename => file, :type => 'Application/octet-stream'
 end
 
 # params
