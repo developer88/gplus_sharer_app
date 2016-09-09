@@ -6,6 +6,11 @@ post '/' do
   status 403 unless post_to_gplus
 end
 
+get '/debug/screenshot' do
+  list = Dir.glob("./*.*").map{|f| f.split('/').last}
+  puts list.inspect
+end
+
 # params
 #   secret
 #   link to share
