@@ -8,7 +8,9 @@ end
 
 get '/debug/screenshot' do
   list = Dir.glob("./*.*").map{|f| f.split('/').last}
-  raise list.inspect
+  list2 = Dir.glob("../*.*").map{|f| f.split('/').last}
+  list3 = Dir.glob("../../*.*").map{|f| f.split('/').last}
+  raise list.inspect + list2.inspect + list3.inspect
 end
 
 # params
