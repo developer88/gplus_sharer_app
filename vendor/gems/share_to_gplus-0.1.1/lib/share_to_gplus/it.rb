@@ -24,6 +24,7 @@ module ShareToGplus
     end
 
     def share
+      @sharer.scroll_to_add_post_button
       @sharer.open_share_dialog
       @sharer.fill_link(link: config.link) if config.link
       @sharer.fill_text(text: config.text)

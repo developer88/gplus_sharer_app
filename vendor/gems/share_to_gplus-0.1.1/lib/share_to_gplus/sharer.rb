@@ -92,6 +92,26 @@ module ShareToGplus
       end
     end
 
+    # TODO: Some of these helpers already moved to wts gem
+    #         https://source.xing.com/qa/wts/blob/develop/lib/wts/spec/scroll.rb
+    #       So we need to start using this
+    # Scroll page by n pixels
+    # Positive y - scroll down
+    # Negative y - scroll up
+    def scroll_page_by(x: 0, y: 0)
+      object = @browser || page
+      object.execute_script("return window.scrollBy(#{x},#{y})")
+    end
+
+    # Scroll page to certain element
+    def scroll_into_viewport(element:, offset: 0)
+      scroll_page_by(x: 0, y: "#{element}.getBoundingClientRect().top + #{offset}")
+    end
+
+    def scroll_to_add_post_button
+      scroll_into_viewport(element: "document.querySelectorAll('.jXDCJf.Tek5Ce.BDrJf')[0]")
+    end
+
     def wait_a_little_bit
       sleep(5)
     end

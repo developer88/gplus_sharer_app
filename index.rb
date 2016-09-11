@@ -4,6 +4,8 @@ require 'share_to_gplus'
 
 post '/' do
   status 403 unless post_to_gplus
+  rescue Exception => e
+    puts "Something went wrong: #{e.inspect}"
 end
 
 get '/debug/screenshot' do
