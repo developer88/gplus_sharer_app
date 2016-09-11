@@ -3,9 +3,11 @@ require 'sinatra'
 require 'share_to_gplus'
 
 post '/' do
-  status 403 unless post_to_gplus
+  begin
+    status 403 unless post_to_gplus
   rescue Exception => e
     puts "Something went wrong: #{e.inspect}"
+  end
 end
 
 get '/debug/screenshot' do
