@@ -24,6 +24,7 @@ GEM
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
+    concurrent-ruby (1.0.2)
     ffi (1.9.14)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -53,6 +54,8 @@ GEM
       rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    sucker_punch (2.0.2)
+      concurrent-ruby (~> 1.0.0)
     tilt (2.0.5)
     websocket (1.2.3)
     websocket-driver (0.6.4)
@@ -69,6 +72,7 @@ DEPENDENCIES
   poltergeist
   share_to_gplus!
   sinatra
+  sucker_punch
 
 BUNDLED WITH
    1.12.5
