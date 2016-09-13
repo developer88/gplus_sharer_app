@@ -1,7 +1,7 @@
 # myapp.rb
 require 'sinatra'
-require 'jobs/share_job'
 require 'sucker_punch'
+require_relative './jobs/share_job'
 
 post '/' do
   ShareJob.perform_async(params) if authorised?

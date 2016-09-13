@@ -1,3 +1,4 @@
+require 'sucker_punch'
 require 'share_to_gplus'
 
 class ShareJob
