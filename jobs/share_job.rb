@@ -1,10 +1,12 @@
 require 'sucker_punch'
 require 'share_to_gplus'
+require "logger"
 
 class ShareJob
   include SuckerPunch::Job
 
   def perform(payload)
+      SuckerPunch.logger = logger
       share_this = ShareToGplus::It.new do |config|
         config.login = ENV['GPLUS_LOGIN']
         config.password = ENV['GPLUS_PASSWORD']

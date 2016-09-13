@@ -3,12 +3,27 @@ require 'sinatra'
 require 'sucker_punch'
 require_relative './jobs/share_job'
 
+require "logger"
+
+configure do
+  LOG = Logger.new(STDOUT)
+  LOG.level = Logger.const_get ENV['LOG_LEVEL'] || 'DEBUG'
+
+  LOG.info 'Logger is ready'
+end
+
 post '/' do
-  ShareJob.perform_async(params) if authorised?
+  if authorised?
+    LOG.info 'Got authorised request'
+    ShareJob.perform_async(params)
+  end
 end
 
 get '/' do
-  "Queues: " + SuckerPunch::Queue.all.inspect if authorised?
+  if authorised?
+    LOG.info 'Got authorised request'
+    "Queues: " + SuckerPunch::Queue.all.inspect
+  end
 end
 
 get '/debug/screenshot' do

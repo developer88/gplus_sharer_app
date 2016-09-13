@@ -4,8 +4,9 @@ require 'bundler'
 
 Bundler.require
 
-$stdout.sync = true
-
 require 'sinatra'
 require './web'
+
+$stdout.sync = true
+
 run Sinatra::Application
