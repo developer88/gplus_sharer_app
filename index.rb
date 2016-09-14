@@ -18,9 +18,14 @@ get '/' do
   end
 end
 
-get '/debug/screenshot' do
-  file = Dir.glob("/app/./*.*").map{|f| f.split('/').last}.select{|filename| filename.include?('png') }.last
-  send_file "/app/./#{file}", :filename => file, :type => 'Application/octet-stream'
+get '/debug/screenshots' do
+  files = Dir.glob("/app/./*.*").map{|f| f.split('/').last}.select{|filename| filename.include?('png') }
+  puts "Available screenshots: #{files.inspect}"
+end
+
+get '/debug/screenshot/:filename' do |filename|
+  # TODO: Validate that file is png
+  send_file "/app/./#{filename}", :filename => file, :type => 'Application/octet-stream'
 end
 
 def authorised?
