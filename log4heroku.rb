@@ -4,7 +4,7 @@ class Log4heroku
     @logger.add_appenders(
       Logging.appenders.file(::File.new(::File.join(::File.dirname(::File.expand_path(__FILE__)), '..', 'log', 'debug.log'), 'a+'))
     )
-    @logger.level = :debug
+    @logger.level = :info
     @logger
   end
 end
