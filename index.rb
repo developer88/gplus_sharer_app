@@ -18,6 +18,7 @@ get '/' do
   end
 end
 
+# TODO: return html with links to screenshot/:name route
 get '/debug/screenshots' do
   files = Dir.glob("/app/./*.*").map{|f| f.split('/').last}.select{|filename| filename.include?('png') }
   puts "Available screenshots: #{files.inspect}"
